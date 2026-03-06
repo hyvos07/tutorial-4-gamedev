@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b118pvmscylk6"]
+
+[ext_resource type="Texture2D" uid="uid://bivk5n8i3vnqc" path="res://assets/kenney_platformerpack/PNG/Enemies/fishBlue.png" id="1_clc22"]
+[ext_resource type="Script" uid="uid://dr22g4ex13ibj" path="res://scenes/FishHit.gd" id="1_o72ex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o72ex"]
+size = Vector2(83.25, 114.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gccpt"]
+size = Vector2(77, 110.5)
+
+[node name="Fish" type="RigidBody2D" unique_id=1639522052]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1352738335]
+texture = ExtResource("1_clc22")
+flip_h = true
+flip_v = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1173424011]
+script = ExtResource("1_o72ex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=339825468]
+position = Vector2(0.375, -0.125)
+shape = SubResource("RectangleShape2D_o72ex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1047686910]
+position = Vector2(-0.5, -1.25)
+shape = SubResource("RectangleShape2D_gccpt")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_FallArea_body_entered"]
