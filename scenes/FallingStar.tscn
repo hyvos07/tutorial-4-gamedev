@@ -1,27 +1,22 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bg07t53wqpk5v"]
 
-[ext_resource type="Texture2D" path="res://assets/kenney_platformerpack/PNG/Items/star.png" id="1_tex"]
-[ext_resource type="Script" path="res://scenes/FishHit.gd" id="2_hit"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_area"]
-radius = 22.0
+[ext_resource type="Texture2D" uid="uid://bfpt4n245ef1h" path="res://assets/kenney_platformerpack/PNG/Items/star.png" id="1_tex"]
+[ext_resource type="Script" uid="uid://dr22g4ex13ibj" path="res://scenes/FishHit.gd" id="2_hit"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_body"]
-radius = 20.0
+radius = 31.0
 
-[node name="Star" type="RigidBody2D"]
+[node name="Star" type="RigidBody2D" unique_id=1355533030]
 collision_layer = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_tex")
-
-[node name="Area2D" type="Area2D" parent="."]
+contact_monitor = true
+max_contacts_reported = 199
 script = ExtResource("2_hit")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_area")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1403902477]
+texture = ExtResource("1_tex")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2398957]
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_body")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_FallArea_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_FallArea_body_entered"]

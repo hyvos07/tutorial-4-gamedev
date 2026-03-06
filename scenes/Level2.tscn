@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="5_4p0dt"]
 [ext_resource type="PackedScene" uid="uid://bl88ttjuayvmy" path="res://scenes/AreaTrigger.tscn" id="6_qwp14"]
 [ext_resource type="Script" uid="uid://bm4rfm2jkrx0n" path="res://scenes/Spawner.gd" id="7_xpq2v"]
-[ext_resource type="PackedScene" path="res://scenes/FallingStar.tscn" id="8_0jmjk"]
+[ext_resource type="PackedScene" uid="uid://bg07t53wqpk5v" path="res://scenes/FallingStar.tscn" id="8_0jmjk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l6gr7"]
 texture = ExtResource("2_kkoku")
@@ -1072,4 +1072,4 @@ obstacle = ExtResource("8_0jmjk")
 [node name="Area2D2" parent="." unique_id=1475137824 instance=ExtResource("6_qwp14")]
 position = Vector2(1045, 712)
 scale = Vector2(62.9402, 6.587629)
-sceneName = "LoseScreen"
+sceneName = "Level2"
